@@ -12,5 +12,15 @@ public class MainPage {
     @FindBy(how=How.XPATH, xpath = ".//button[@type='submit']")
     WebElement submitSearchButton;
 
+    public MainPage(WebDriver driver) {
+        this.driver = driver;
+        driver.get("https://rozetka.com.ua/");
+    }
+
+    public void searchForIphone(String textToSearch) {
+        searchInput.sendKeys(textToSearch);
+        submitSearchButton.click();
+
+    }
 
 }
